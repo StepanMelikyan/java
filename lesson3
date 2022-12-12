@@ -1,0 +1,56 @@
+import java.util.ArrayList;
+
+public class App {
+    public static void main(String[] args) throws Exception {
+        // 1. Создать новый список, добавить несколько строк и вывести коллекцию на экран.
+
+        ArrayList arra1 = new ArrayList();
+        arra1.add(8);
+        arra1.add(new String("Hi"));
+        arra1.add(1.5f);
+        System.out.println(arra1);
+
+        // 2.Итерация всех элементов списка цветов и добавления к каждому символа '!'.
+        arra1.clear();
+        arra1.add(new String("зеленый"));
+        arra1.add(new String("красный"));
+        arra1.add(new String("черный"));
+        arra1.add(new String("белый"));
+        for (int j = 0; j <arra1.size(); j ++){
+            arra1.set(j, arra1.get(j) + "!");
+        }
+
+
+        
+        // Вставить элемент в список в первой позиции.
+        arra1.add(0, 1);
+
+
+
+        // Извлечь элемент (по указанному индексу) из заданного списка.
+        System.out.println(arra1.get(1)); 
+        
+
+        // Обновить определенный элемент списка по заданному индексу.
+        arra1.set(0, 2);
+        
+        // Удалить третий элемент из списка.
+        arra1.remove(2);
+        
+        // Поиска элемента в списке по строке.
+        boolean result = arra1.stream().anyMatch(array1 -> arra1.equals("зеленый!"));
+        System.out.println(result);
+        // Создать новый список и добавить в него несколько елементов первого списка.
+        ArrayList arra2 = new ArrayList();
+        for (int j = 0; j <arra1.size()-2; j ++){
+            arra2.add(arra1.get(j));
+        }
+        System.out.println(arra2);
+
+        // Удалить из первого списка все элементы отсутствующие во втором списке.
+        arra1.removeAll(arra2);
+        System.out.println(arra1);
+        // *Сортировка списка.
+        // *Сравнить время работы тысячи повторений пункта 3 для ArrayList и LinkedList.
+    }
+}
